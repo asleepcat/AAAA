@@ -7,4 +7,4 @@ Run bundle install
 
 Run jekyll
 
-	jekyll
+	bundle exec jekyll serve
