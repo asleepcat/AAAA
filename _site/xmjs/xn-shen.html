@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title> 电力收费系统  - By ZhangHao</title>
+		<!-- For responsive site
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="author" href="/humans.txt">
+		<meta name="description" content="Description Goes Here">
+		<link rel="stylesheet" href="/css/style.css">
+		<!--[if IE 7]>
+			<html class="ie7"> 
+			<link rel="stylesheet" type="text/css" href="/css/font-awesome-ie7.min.css">
+		<![endif]-->
+		<!--[if IE 8]><html class="ie8"> <![endif]-->		
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="ico/favicon.png">	    
+	</head>
+	<body>
+	<!-- Header
+	    ================================================== -->
+	<header>
+
+	</header>
+
+	<div class="top-strip"></div>
+<main class="content">
+    <section class="container">
+    	<div class="row-fluid">
+    		<article class="home-icon">
+				<a href="/">
+					<i class="icon-home"></i> 
+				</a>
+			</article>
+			<article class="post">
+				<!--<h5></h5>-->
+				<h2 class="content">电力收费系统</h2>
+				<section>
+					<h4 id="section">采用工具</h4>
+<ul>
+  <li>java,swt</li>
+  <li>hibernate,Mysql           </li>
+</ul>
+
+<hr />
+
+<h4 id="section-1">个人职责/动机</h4>
+<p>帮人写软著，完成了从数据库设计到实现所有功能。            </p>
+
+<hr />
+
+<h4 id="section-2">主要功能</h4>
+<p>包含了基本的登陆，用户管理，电力收费，抄表，查询等相关操作。          </p>
+
+<hr />
+
+<h4 id="section-3">部分功能示例</h4>
+<ul>
+  <li>登陆界面          <br />
+<img src="/img/ETMS/login.png" alt="login" />      </li>
+  <li>主界面   <br />
+<img src="/img/ETMS/main.png" alt="login" />      </li>
+  <li>用户管理界面     <br />
+<img src="/img/ETMS/user.png" alt="login" />       </li>
+  <li>收费界面    <br />
+<img src="/img/ETMS/charge.png" alt="login" />       </li>
+</ul>
+
+<hr />
+
+<h4 id="section-4">部分代码</h4>
+
+<p><strong>抄表计算</strong>           </p>
+
+<blockquote>
+
+  <pre><code>@Override
+public void widgetSelected(SelectionEvent e) {
+	MessageBox mb = new MessageBox(shell,SWT.ICON_QUESTION | SWT.OK| SWT.CANCEL);
+	try{
+		int row = table.getSelectionIndex();
+		if(bccbdl.getText().equals("")||row&lt;0){
+			mb.setText("提示");
+			mb.setMessage("请选择一条数据，并填写本次抄表电量！");
+			mb.open();
+			return;
+		}
+		TableItem item =table.getItem(row);
+		String yhid=item.getText(0);//用户ID
+		//计算价格并扣除使用电量
+		BaseBll b=new BaseBll();
+		List l =b.load("select cbdl from GetData where yhid='"+yhid+"' and sfqy='是'");
+		double scdl=(Double) l.get(0);//上次电量
+		double dqdl=Double.parseDouble(bccbdl.getText());//当前电量
+		if(dqdl&lt;=scdl){
+			mb.setText("提示");
+			mb.setMessage("请确保当前电量大于上次电量！！");
+			mb.open();
+			return;
+		}
+		double cha=dqdl-scdl;
+		List stand =b.load("select a.feestandard from PowerType a,UserInfo b where a.id=b.powertypeID and b.yhid='"+yhid+"'");
+		double standard=Double.parseDouble(stand.get(0).toString());
+		double ye=Double.parseDouble(yhye.getText())-cha*standard;
+		String hql = "update UserInfo set yhye='"+ye+"' where yhid='"+yhid+"'";
+		b.update(hql);
+		//之前的记录更新为否
+		if(!b.load("select gdid from GetData where yhid='"+yhid+"'").isEmpty()){
+			b.update("update GetData set sfqy='否' where yhid='"+yhid+"'");
+		}
+		//新建抄表记录
+		GetData g =new GetData();
+		g.setYhid(Integer.parseInt(yhid));
+		g.setCbrq(new Date());
+		g.setSfqy("是");
+		g.setCbdl(Double.parseDouble(bccbdl.getText()));
+		b.add(g);
+		mb.setText("提示");
+		mb.setMessage("保存成功!");
+		mb.open();
+		yhye.setText(String.valueOf(ye));
+		table.removeAll();
+		initTableItem();
+	}catch(Exception e1){
+		mb.setText("提示");
+		mb.setMessage("请确保信息填写正确，保证本次抄表电量为数字！");
+		mb.open();
+	}
+}
+</code></pre>
+</blockquote>
+
+					<hr>
+				</section>
+				<section style="font-weight:bold; margin-bottom: 2em;">
+					
+						
+				</section>
+			</article>
+		</div>
+	</section>
+</main>
+
+
+	<footer>
+		<div class="container">
+			<a href="https://github.com/asleepcat">ZhangHao</a> | 联系我：529574832@qq.com/18661206873(南京)/18487276689(昆明)
+		</div>
+	</footer>
+
+	<!-- Footer
+	    ================================================== -->
+
+	<!-- Javascripts 
+	    ================================================= -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+		// analytics code
+    </script>	
+	</body>
+</html>
