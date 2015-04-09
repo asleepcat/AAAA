@@ -1,5 +1,5 @@
 ---
-layout: post_page
+layout: xm_page
 title: 电力收费系统
 ---
 ####采用工具               
@@ -27,6 +27,8 @@ title: 电力收费系统
 ![login](/img/ETMS/user.png)       
 - 收费界面      
 ![login](/img/ETMS/charge.png)       
+- 历史查询界面      
+![login](/img/ETMS/jiaofei.png)       
 
 ***      
     

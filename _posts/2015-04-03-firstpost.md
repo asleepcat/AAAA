@@ -4,7 +4,8 @@ title: 个人简历
 ---
 ###基本资料
 **姓名**: 张昊           
-**性别**: 男   
+**性别**: 男     
+**生日**: 1990/11/1     
 **学历**: 硕士      
 **联系方式**:18487276689/asleepcat@163.com/QQ529574832             
 **Github主页**：[github.com/asleepcat](https://github.com/asleepcat).       
@@ -25,7 +26,7 @@ title: 个人简历
 
 ###项目经验       (按照参与时间和程度排序)         
 - 2015/01~2015/02      
-	**肾内科数据信息管理** (eclipse，webstorm，powerdesign)    
+	[**肾内科数据信息管理**](/xmjs/xm-shen.html)   (eclipse，webstorm，powerdesign)                
 	**项目描述**：年前最后一个项目，类似于数据录入网站。整个项目核心由两人一个月内完成。采用tomcat+Jquery+java+Spring+oracle技术。这个项目着重关注了程序的抽象和优化。此外很多工作不是前台做，就是给后台做，在任务的分配中一切实际效率为准。本人担任所有后台以及项目进度管理工作，搭建了基于Spring的后台框架并进行了适当优化整合，完成了所有功能的逻辑处理。      
 
 	**个人职责**：除了界面，后台全由本人完成。  
@@ -56,7 +57,7 @@ title: 个人简历
 
 
 ###个人作品及其他
-- [一个基于SWT+JAVA的B/S电力收费系统](/xmjs/xn-shen.html)
+- [一个基于SWT+JAVA的B/S电力收费系统](/xmjs/xm-etms.html)
 
 **待续.... 2015/04/07**
 
