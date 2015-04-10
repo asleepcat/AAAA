@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title> 室内质控系统  - By ZhangHao</title>
+		<!-- For responsive site
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="author" href="/humans.txt">
+		<meta name="description" content="Description Goes Here">
+		<link rel="stylesheet" href="/css/style.css">
+		<!--[if IE 7]>
+			<html class="ie7"> 
+			<link rel="stylesheet" type="text/css" href="/css/font-awesome-ie7.min.css">
+		<![endif]-->
+		<!--[if IE 8]><html class="ie8"> <![endif]-->		
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+		<link rel="shortcut icon" href="ico/favicon.png">	    
+	</head>
+	<body>
+	<!-- Header
+	    ================================================== -->
+	<header>
+
+	</header>
+
+	<div class="top-strip"></div>
+<main class="content">
+    <section class="container">
+    	<div class="row-fluid">
+    		<article class="home-icon">
+				<a href="/2015/04/03/firstpost.html">
+					<i class="icon-home"></i> 
+				</a>
+			</article>
+			<article class="post">
+				<!--<h5></h5>-->
+				<h2 class="content">室内质控系统</h2>
+				
+				<section>
+					<h4 id="section">开发工具</h4>
+<ul>
+  <li>Java       </li>
+  <li>Spring，Hibernate,SVN        </li>
+  <li>Oracle           </li>
+  <li>ExtJs</li>
+</ul>
+
+<hr />
+
+<h4 id="section-1">开发团队/个人职责/时间/参与度</h4>
+<p>核心团队一共五人（需求一人，前端两人，后端两人），本人主要负责质控规则计算，数据提交，知识库等功能后端开发。核心功能开发两个月。后台参与度50%。           </p>
+
+<hr />
+
+<h4 id="section-2">需求设计</h4>
+<p>界面设计采用GUIdesign，数据库采用PowerDesign。          <br />
+<img src="/img/QC/QC1.png" alt="login" />       </p>
+
+<hr />
+
+<h4 id="section-3">完成产品</h4>
+
+<p><img src="/img/QC/QC2.png" alt="login" />
+<img src="/img/QC/QC3.png" alt="login" />             <br />
+<img src="/img/QC/QC4.png" alt="login" />           </p>
+
+<hr />
+
+<h4 id="section-4">部分框架配置</h4>
+<ul>
+  <li>数据库连接池采用阿里的druid              </li>
+</ul>
+
+<blockquote>
+  <pre><code>&lt;!-- 配置数据源 --&gt;
+&lt;bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+	init-method="init" destroy-method="close"&gt;
+	&lt;property name="driverClassName" value="${jdbc.driverClassName}" /&gt;
+	&lt;property name="url" value="${jdbc.url}" /&gt;
+	&lt;property name="username" value="${jdbc.username}" /&gt;
+	&lt;property name="password" value="${jdbc.password}" /&gt;
+	&lt;!-- 初始化连接大小 --&gt;
+	&lt;property name="initialSize" value="0" /&gt;
+	&lt;!-- 连接池最大使用连接数量 --&gt;
+	&lt;property name="maxActive" value="20" /&gt;
+	&lt;!-- 连接池最大空闲 --&gt;
+	&lt;property name="maxIdle" value="20" /&gt;
+	&lt;!-- 连接池最小空闲 --&gt;
+	&lt;property name="minIdle" value="0" /&gt;
+	&lt;!-- 获取连接最大等待时间 --&gt;
+	&lt;property name="maxWait" value="60000" /&gt;
+	&lt;!-- &lt;property name="validationQuery" value="${validationQuery}" /&gt; --&gt;
+	&lt;property name="testOnBorrow" value="false" /&gt;
+	&lt;property name="testOnReturn" value="false" /&gt;
+	&lt;property name="testWhileIdle" value="true" /&gt;
+	&lt;!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 --&gt;
+	&lt;property name="timeBetweenEvictionRunsMillis" value="60000" /&gt;
+	&lt;!-- 配置一个连接在池中最小生存的时间，单位是毫秒 --&gt;
+	&lt;property name="minEvictableIdleTimeMillis" value="25200000" /&gt;
+	&lt;!-- 打开removeAbandoned功能 --&gt;
+	&lt;property name="removeAbandoned" value="true" /&gt;
+	&lt;!-- 1800秒，也就是30分钟 --&gt;
+	&lt;property name="removeAbandonedTimeout" value="1800" /&gt;
+	&lt;!-- 关闭abanded连接时输出错误日志 --&gt;
+	&lt;property name="logAbandoned" value="true" /&gt;
+	&lt;!-- 监控数据库 --&gt;
+	&lt;property name="filters" value="mergeStat" /&gt;
+&lt;/bean&gt;
+</code></pre>
+</blockquote>
+
+<ul>
+  <li>自动注入采用注解                 </li>
+</ul>
+
+<blockquote>
+
+  <pre><code>&lt;context:component-scan base-package="bme.qc.*.*.service"&gt;
+	&lt;context:include-filter type="annotation"
+		expression="org.springframework.stereotype.Service" /&gt;
+&lt;/context:component-scan&gt;          
+</code></pre>
+</blockquote>
+
+
+					<hr>
+				</section>
+				<section style="font-weight:bold; margin-bottom: 2em;">
+							<a rel="prev" class="a-hover"href="/2015/04/03/firstpost.html"><i class="icon-double-angle-left"></i> 返回简历页面</a>
+					</section>
+			</article>
+		</div>
+	</section>
+</main>
+
+
+	<footer>
+		<div class="container">
+			<a href="https://github.com/asleepcat">ZhangHao</a> | 联系我：529574832@qq.com/18661206873(南京)/18487276689(昆明)
+		</div>
+	</footer>
+
+	<!-- Footer
+	    ================================================== -->
+
+	<!-- Javascripts 
+	    ================================================= -->
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/custom.js"></script>
+
+    <!-- Analytics
+    ================================================== -->
+    <script>
+		// analytics code
+    </script>	
+	</body>
+</html>

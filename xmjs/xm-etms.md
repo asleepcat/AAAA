@@ -3,8 +3,8 @@ layout: xm_page
 title: 电力收费系统
 ---
 ####采用工具               
-- java,swt
-- hibernate,Mysql           
+- Java,swt,windowsBuilder
+- Hibernate,Mysql           
 
 ***         
 
