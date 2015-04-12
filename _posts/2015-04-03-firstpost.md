@@ -2,7 +2,7 @@
 layout: post_page
 title: 个人简历
 ---
-<img src="/img/zh/zh.jpg" align ="right" style="width:150px;height:180px;"/>            
+<!--<img src="/img/zh/zh.jpg" align ="right" style="width:120px;height:150px;"/> -->           
 
 ###基本资料                              
 **姓名**: 张昊               
@@ -51,19 +51,22 @@ title: 个人简历
 	- 4.知识储备不够，不了解java的高级特性，对于Spring这类框架理解不够深刻，绕了很多弯子）。            
 
 	**个人职责**：后台代码实现，部分ExtJs界面实现          
+                
+<img src="/img/zh/200.png" align ="right" style="width:120px;height:120px;"/>              
 
 ###工作/实习经历
 - **时间：**2014/2/30~2014/4/10    
   **公司：**南京雨润云中央（中央商场线上平台）      
-    职责：B2C项目组——负责电联网以及手机APP等的服务端（接口）开发
+    职责：B2C项目组——负责电联网以及手机APP等的服务端（接口）开发                    
 
-
-###个人作品及其他         
+###个人作品及其他           
 - [一个基于SWT+JAVA的B/S电力收费系统](/xmjs/xm-etms.html)
-- **本电子简历采用MarkDown调试，通过jekyll和github服务器搭建**         
+- **本电子简历采用MarkDown调试，通过jekyll和github服务器搭建**    
+- 具体详见简历的网络版本[asleep.github.io](https://aleepcat/github.io) ，或者扫描右侧二维码，谢谢。         
 
 
-            
+
+                        
     
-**待续.... 2015/04/10**
+**待续.... 2015/04/12**
 
