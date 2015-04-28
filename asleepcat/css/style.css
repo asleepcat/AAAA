@@ -1,4 +1,4 @@
-/*Ö÷Ò³ÃæµÄcss*
+/*ä¸»é¡µé¢çš„css*
 *******************************************************************************************/
 #box1{position: relative;}
 #box1 img{width: 100%;}
@@ -67,7 +67,7 @@
     font-size: 14px;
     line-height: 150%;
 }
-/*²©¿ÍÒ³ÃæµÄcss
+/*åšå®¢é¡µé¢çš„css
 ********************************************************************************************/
 body,h1,h2,h3,h4,h5,h6,ul,ol,p,li{margin: 0;padding: 0;font-family: cursive}
 body{background-color: #eaeaea;position: relative}
@@ -94,7 +94,7 @@ ul{list-style: none}
     font-size: 30px;
 }
 #link{
-    font-family: "ËÎÌå";
+    font-family: "å®‹ä½“";
     color: white;
     float: right;
     padding-top:19px;
@@ -109,7 +109,7 @@ ul{list-style: none}
     margin-top: 46px;
     padding-right: 10px;
 }
-/*Ö÷ÌåµÄÄÚÈİ*/
+/*ä¸»ä½“çš„å†…å®¹*/
 #container{
     width: 980px;
     margin: 10px auto auto auto;
@@ -117,13 +117,13 @@ ul{list-style: none}
     margin-top: 10px;
     height: 1200px;
 }
-#articlelist{/*×ó²à*/
+#articlelist{/*å·¦ä¾§*/
     width: 70%;
     /*background-color: antiquewhite;*/
     height: 80%;
     float: left;
 }
-#menu{/*ÓÒ²à*/
+#menu{/*å³ä¾§*/
     width: 30%;
     /*background-color: burlywood;*/
     height: 100%;
@@ -165,7 +165,7 @@ ul{list-style: none}
 .down{
     background-color: #4bb46a;
 }
-/*ÓÒ²àµÄÄÚÈİ*/
+/*å³ä¾§çš„å†…å®¹*/
 #search,#selector,#data,#tags{
     width: 100%;
     background-color:white;
@@ -215,7 +215,7 @@ ul{list-style: none}
     width: 100%;
     line-height: 313%;
     border-left: 5px solid #b6c9ff;
-    display: inline-block;/*ĞĞÄÚ¿éÔªËØ*/
+    display: inline-block;/*è¡Œå†…å—å…ƒç´ */
     padding-left: 10px;
     border-bottom-color: #c1c1c1;
 }
@@ -240,7 +240,7 @@ ul{list-style: none}
 .line1 strong span{
     padding: 4px;
 }
-/*Ò³½Å·ÖÒ³ĞÅÏ¢*/
+/*é¡µè„šåˆ†é¡µä¿¡æ¯*/
 .pagingfoot{
     /*background-color: #399685;*/
     height: 50px;
@@ -307,7 +307,7 @@ ul{list-style: none}
     bottom: 0;
     left: 49%;
 }
-/*¹ØÓÚaboutµÄcss*
+/*å…³äºaboutçš„css*
 ********************************************************************************************/
 #aboutcontainer{
     background-color: white;
